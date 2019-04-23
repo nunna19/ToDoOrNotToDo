@@ -1,0 +1,26 @@
+{
+  "name": "todo or not todo",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "dependencies": {
+    "enzyme": "3.7.0",
+    "enzyme-adapter-react-16": "1.6.0",
+    "react": "next",
+    "react-dom": "next",
+    "react-motion": "^0.5.2",
+    "react-scripts": "2.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
