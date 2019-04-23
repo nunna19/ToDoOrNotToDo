@@ -40,18 +40,26 @@
 }
 .example-enter {
     opacity: 0.01;
+
 }
   
 .example-enter.example-enter-active {
     opacity: 1;
     transition: all 500ms ease-in;
+    background:green;
+
+
 }
 
 .example-leave {
     opacity: 1;
+    background:orange;
+
 }
 
 .example-leave.example-leave-active {
     opacity: 0.01;
     transition: all 300ms ease-in;
+    background:purple;
+
 }
