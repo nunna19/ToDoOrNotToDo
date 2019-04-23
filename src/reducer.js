@@ -11,7 +11,7 @@ export default function reducer(state, action) {
       }
       return {
         ...state,
-        todos: [...state.todos, action.payload]
+        todos: [...state.todos, action.payload],
       };
     case "COMPLETE":
       return {

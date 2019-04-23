@@ -10,7 +10,7 @@ const AddTodo = () => {
   const [todo, setTodo] = useState("");
 
   function handleTodoChange(e) {
-    setTodo(e.target.value);
+    setTodo(e.target.value)
   }
 
   function handleTodoAdd() {
@@ -37,7 +37,7 @@ const AddTodo = () => {
           />
           <div className="input-group-append">
             <button className="btn btn-primary" onClick={handleTodoAdd}>
-              Add
+              <i className="fas fa-plus-circle"></i>
             </button>
           </div>
         </div>

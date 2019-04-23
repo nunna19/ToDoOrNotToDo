@@ -1,54 +1,36 @@
 import React, { useContext } from "react";
 import Store from "../context";
 import { Header } from "./Header";
-import {TransitionMotion, spring, presets} from 'react-motion';
+import { Motion, spring } from 'react-motion';
+import { CSSTransitionGroup } from 'react-transition-group' // ES6
+
 
 export default function List() {
   const { state, dispatch } = useContext(Store);
 
-  const pluralize = count =>
+  const format = count =>
     count > 1 ? `There are ${count} todos.` : `There is ${count} todo.`;
 
-
-  const willEnter = ()  => {
-      return {
-        height: 0,
-        opacity: 1,
-      };
-    };
-  
-  const willLeave = () => {
-      return {
-        height: spring(0),
-        opacity: spring(0),
-      };
-    };
-  
-
+  const handleTouchStart = (key, pressLocation, e) => {
+    this.handleMouseDown(key, pressLocation, e.touches[0]);
+  };
   let header =
     state.todos.length === 0 ? (
       <h4>Yay! All todos are done! Take a rest!</h4>
     ) : (
         <Header>
-          <span className="float-right">{pluralize(state.todos.length)}</span>
+          <span className="float-right">{format(state.todos.length)}</span>
         </Header>
       );
 
   const showTodos = () => {
-    
-      return state.todos.map(t => (
-        <li key={t} className="list-group-item">
-          {t}
-          <button
-            className="float-right btn btn-danger btn-sm"
-            style={{ marginLeft: 10 }}
-            onClick={() => dispatch({ type: "COMPLETE", payload: t })}
-          >
-            Complete
-          </button>
-        </li>
-      ))
-    
+    return state.todos.map(t => (
+      <li key={t} className="list-group-item"  onClick={() => dispatch({ type: "COMPLETE", payload: t })}>
+        {t}
+        <i className="float-right fas fa-times"></i>
+      </li>
+    ))
+
   }
 
   return (
@@ -63,7 +45,13 @@ export default function List() {
         <div className="row">
           <div className="col-md-12">
             <ul className="list-group">
-              {showTodos()}
+              <CSSTransitionGroup
+                transitionName="example"
+                transitionEnterTimeout={500}
+                transitionLeaveTimeout={300}>
+
+                {showTodos()}
+              </CSSTransitionGroup>
             </ul>
           </div>
         </div>

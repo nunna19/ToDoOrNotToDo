@@ -6,7 +6,7 @@ export const Header = (props) => (
       <h5>To do or not to do</h5>
     </div>
     <div className="col-md-4">
-      dsf {props.children}
+       {props.children}
     </div>
   </div>
 );

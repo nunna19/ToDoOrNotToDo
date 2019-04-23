@@ -24,7 +24,7 @@ test("<List /> #display", async () => {
       .first()
       .html()
   ).toEqual(
-    '<li class="list-group-item">a<button class="float-right btn btn-danger btn-sm" style="margin-left: 10px;">Complete</button></li>'
+    '<li class="list-group-item">a<button class="float-right btn btn-danger btn-sm" style="margin-left: 10px;"><i class="fas fa-times"></i></button></li>'
   );
   expect(
     list
@@ -32,7 +32,7 @@ test("<List /> #display", async () => {
       .last()
       .html()
   ).toEqual(
-    '<li class="list-group-item">c<button class="float-right btn btn-danger btn-sm" style="margin-left: 10px;">Complete</button></li>'
+    '<li class="list-group-item">c<button class="float-right btn btn-danger btn-sm" style="margin-left: 10px;"><i class="fas fa-times"></i></button></li>'
   );
 });
 
