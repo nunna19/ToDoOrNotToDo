@@ -6,6 +6,6 @@
 ### `npm test`
 
 
-[a demo](https://y7z8mnv5z.codesandbox.io/)
+[demo](https://r7lw56n35o.codesandbox.io/)
 
-[a sandbox](https://codesandbox.io/s/y7z8mnv5z)
+[sandbox](https://codesandbox.io/s/r7lw56n35o)
