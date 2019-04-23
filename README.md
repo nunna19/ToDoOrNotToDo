@@ -1,8 +1,7 @@
-#TODO LIST FOR TODOS 
 
-**npm install 
+### `npm install`
+ 
+### `npm start`
 
-**npm start 
-
-**npm test 
+### `npm test`
 
