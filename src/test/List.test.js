@@ -24,7 +24,7 @@ test("<List /> #display", async () => {
       .first()
       .html()
   ).toEqual(
-    '<li class="list-group-item">a<button class="float-right btn btn-danger btn-sm" style="margin-left: 10px;"><i class="fas fa-times"></i></button></li>'
+    '<li class="list-group-item">a<i class="float-right fas fa-times"></i></li>'
   );
   expect(
     list
@@ -32,7 +32,7 @@ test("<List /> #display", async () => {
       .last()
       .html()
   ).toEqual(
-    '<li class="list-group-item">c<button class="float-right btn btn-danger btn-sm" style="margin-left: 10px;"><i class="fas fa-times"></i></button></li>'
+    '<li class="list-group-item">c<i class="float-right fas fa-times"></i></li>'
   );
 });
 
@@ -45,7 +45,7 @@ test("<List /> #completeCalls", async () => {
     </Store.Provider>
   );
 
-  list.find("button").forEach(b => b.simulate("click"));
+  list.find("li").forEach(b => b.simulate("click"));
   expect(dispatch.mock.calls.length).toBe(3);
 });
 
@@ -61,7 +61,7 @@ test("<List /> #completeMutates", async () => {
   );
 
   await list
-    .find("button")
+    .find("li")
     .last()
     .simulate("click");
   expect(state.todos.length).toBe(2);
