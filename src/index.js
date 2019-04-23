@@ -3,7 +3,9 @@ import ReactDOM from "react-dom";
 
 import Store from "./context";
 import reducer from "./reducer";
+import './app.min.css'
 import './index.css'
+
 import { usePersistedContext, usePersistedReducer } from "./localStorage";
 
 import List from "./components/List";
