@@ -1,5 +1,16 @@
 import React, { useContext, useState } from "react";
 import Store from "../context";
+import styled from 'styled-components';
+// import bg from "./bg.png"
+
+const Wrapper = styled.section`
+  padding: 4em;
+  // background: rgb(0, 169, 255)  ;
+  background-image:url("./bg.png") ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+`;
 
 const AddTodo = () => {
 
@@ -22,7 +33,10 @@ const AddTodo = () => {
     if (event.keyCode === 13) handleTodoAdd();
   }
 
+
   return (
+    <Wrapper>
+      {/* <img src="./bg.png" /> */}
     <div className="row">
       <div className="col-md-12">
         <br />
@@ -43,6 +57,7 @@ const AddTodo = () => {
         </div>
       </div>
     </div>
+    </Wrapper>
   );
 }
 
